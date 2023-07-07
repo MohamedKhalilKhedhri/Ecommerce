@@ -1,0 +1,1069 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+/*stying nav*/
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  height: 4.4rem;
+  padding: 0px 1.2rem;
+  /* a close button in case the web opened in phone*/
+  /*end Styling nav*/
+}
+nav .dropdown {
+  /*our hovered area to displaay the dropdown_content*/
+  position: relative;
+  height: 100%;
+}
+nav .dropdown .dropbtn1 {
+  height: 100%;
+  padding: 0px 25px;
+  margin-left: 10px;
+}
+nav .dropdown .dropdown_content {
+  /*styling our categories dropcontent*/
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 9999;
+  background-color: white;
+  padding: 15px 0px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  display: none;
+  flex-direction: column;
+  width: 300px;
+  /*start styling the drop left menu that have buttons to hover to display the dropleft_content*/
+}
+nav .dropdown .dropdown_content .dropleft_menu .dropbtn2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px;
+}
+nav .dropdown .dropdown_content .dropleft_menu .dropbtn2:hover {
+  color: #C06FBC;
+}
+nav .dropdown .dropdown_content .dropleft_menu:hover .dropbtn2 + .dropleft_content {
+  display: flex;
+}
+nav .dropdown .dropdown_content .dropleft_content {
+  /* styling the options of every category we  have*/
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  left: 100%;
+  top: 0;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  /*end of it (options)*/
+}
+nav .dropdown .dropdown_content .dropleft_content a {
+  padding: 10px 25px;
+  color: #222;
+}
+nav .dropdown .dropdown_content .dropleft_content a:hover {
+  color: #C06FBC;
+}
+nav .dropdown:hover .dropdown_content,
+nav .dropdown .dropdown_content:hover {
+  /*hovered categories to show our categories*/
+  display: flex;
+}
+nav .search {
+  /* styling search filed*/
+  margin-left: 10px;
+  display: flex;
+  border-radius: 30px;
+  height: 50px;
+  flex-grow: 2;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  /*end styling the search  field*/
+}
+nav .search input {
+  border-radius: 30px;
+  padding-left: 20px;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  flex: 1;
+}
+nav .search button {
+  cursor: pointer;
+  padding: 0px 10px;
+}
+nav ul {
+  /*  styling ul it lists : season drop menu , heart , shop , profile drop menu*/
+  display: flex;
+  height: 100%;
+  margin-left: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+nav ul li {
+  flex-basis: 25%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+nav ul li > a,
+nav ul li button {
+  flex-basis: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+}
+nav ul li > a:hover,
+nav ul li button:hover {
+  color: #C06FBC;
+}
+nav ul .dropseason {
+  /*hovered area to show our season dropmenu*/
+  position: relative;
+  height: 100%;
+}
+nav ul .dropseason .Sbtn {
+  /* the button to hover*/
+  height: 100%;
+}
+nav ul .dropseason .seasons {
+  /* the drop down menu of seasons*/
+  z-index: 9999;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  padding: 15px 0px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  display: none;
+  flex-direction: column;
+  width: 200px;
+}
+nav ul .dropseason .seasons a {
+  /*seasons links*/
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  color: #222;
+}
+nav ul .dropseason .seasons a:hover {
+  color: #C06FBC;
+}
+nav ul .dropseason:hover .seasons,
+nav ul .dropseason .seasons:hover {
+  display: flex;
+}
+nav ul .profile {
+  /*hovered area to show profile options*/
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+nav ul .profile:hover .profileinfos {
+  display: flex;
+}
+nav ul .profile .profileinfos {
+  /* all infos of profile  flash + communication +regles*/
+  z-index: 9999;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  /*messages / notifications  links in user profile*/
+}
+nav ul .profile .profileinfos .flash_profile {
+  /*profile content : img , mail , name*/
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  gap: 5px;
+  align-items: center;
+}
+nav ul .profile .profileinfos .flash_profile .profile_img {
+  /*profile border*/
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+nav ul .profile .profileinfos .flash_profile .profile_img img {
+  /* profile image*/
+  display: block;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+nav ul .profile .profileinfos .communication,
+nav ul .profile .profileinfos .regles {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+nav ul .profile .profileinfos .communication a,
+nav ul .profile .profileinfos .regles a {
+  padding: 10px;
+  color: #222;
+}
+nav ul .profile .profileinfos .communication a:hover,
+nav ul .profile .profileinfos .regles a:hover {
+  color: #C06FBC;
+}
+nav .close {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  display: none;
+}
+
+.open {
+  /*styling the open side nav button*/
+  position: fixed;
+  top: 30px;
+  left: 20px;
+  padding: 20px;
+  display: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  z-index: 99998;
+}
+
+/*start making the nav responsive*/
+@media screen and (max-width: 1000px) {
+  nav {
+    justify-content: space-evenly;
+    background-color: white;
+    position: fixed;
+    -webkit-backdrop-filter: blur(50px);
+            backdrop-filter: blur(50px);
+    width: 70%;
+    top: 0;
+    transition: 1s ease-in-out;
+    transform: translateX(0%);
+    height: 100vh;
+    z-index: 99999;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  nav .dropdown {
+    display: none;
+  }
+  nav .search {
+    width: 100%;
+    height: 50px;
+    flex-grow: 0;
+  }
+  nav ul {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    height: 75%;
+    position: relative;
+    flex-grow: 0;
+  }
+  nav ul li {
+    text-align: center;
+    width: 100%;
+  }
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    border: 3px solid white;
+    color: #222;
+    background-color: white;
+  }
+  nav ul .dropseason {
+    display: none;
+  }
+  nav ul .profile {
+    width: 100%;
+    height: auto;
+  }
+  nav ul .profile .Pbtn {
+    display: none;
+  }
+  nav ul .profile .profileinfos {
+    position: static;
+    display: flex;
+    box-shadow: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 10px;
+  }
+  nav ul .profile .profileinfos .flash_profile {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 5px;
+    align-items: center;
+  }
+  nav ul .profile .profileinfos .flash_profile .profile_img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  nav ul .profile .profileinfos .flash_profile .profileinfo {
+    padding: 10px;
+    width: 100%;
+  }
+  nav ul .profile .profileinfos .flash_profile .profileinfo h3 {
+    font-size: 25px;
+    text-align: center;
+  }
+  nav ul .profile .profileinfos .flash_profile .profileinfo p {
+    text-align: center;
+    word-wrap: break-word;
+  }
+  nav ul .profile .profileinfos .communication,
+  nav ul .profile .profileinfos .regles {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  nav ul .profile .profileinfos .communication a,
+  nav ul .profile .profileinfos .regles a {
+    padding: 10px;
+  }
+  nav .search {
+    margin-top: 10px;
+    width: 90%;
+    flex-direction: row-reverse;
+  }
+  nav .search input {
+    padding: 0;
+  }
+  nav .close {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    z-index: 99999;
+  }
+}
+@media screen and (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  nav h1 {
+    display: none;
+  }
+}
+/*end of making nav responsive*/
+.slider {
+  /*styling slider container*/
+  width: 90vw;
+  margin: 10px auto;
+  height: 400px;
+  position: relative;
+  /*styling the dots*/
+}
+.slider .slides {
+  /*styling my slides*/
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.slider .slides .slide {
+  /*styling each slide*/
+  flex: 0 0 100%;
+  height: 400px;
+  position: relative;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.slider .slides .slide img {
+  /*slide img*/
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slider .slides .slide .pubcontent {
+  /*the pubcontent in each slide*/
+  position: absolute;
+  bottom: 75px;
+  left: 50px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 10px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.slider .slides .slide .pubcontent a {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 10px;
+  padding: 10px 25px;
+  color: #222;
+  background-color: white;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+}
+.slider .slides .slide .pubcontent a:hover {
+  background-color: black;
+  color: white;
+}
+.slider .dots,
+.slider .idots {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  border-radius: 50px;
+  left: 20px;
+}
+.slider .dots .dot,
+.slider .dots .idot,
+.slider .idots .dot,
+.slider .idots .idot {
+  margin: 5px 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px black;
+  z-index: 100;
+}
+.slider .dots .idot,
+.slider .idots .idot {
+  opacity: 0;
+}
+
+/*end styling dots*/
+/* opacity animation after sliding*/
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/***/
+.specialads {
+  /****styling my 2 add divs for special disscounts***/
+  display: flex;
+  width: 90vw;
+  margin: 50px auto;
+  justify-content: space-between;
+  /*****end of styling two disscount  divs***/
+}
+.specialads .specialads_content {
+  background-color: #F5F5F5;
+  width: 48%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 5px;
+  /****our disscounted product small image (for attraction)****/
+}
+.specialads .specialads_content:nth-child(1) {
+  background-image: url("../../images/shoee.png");
+  background-position: 100% 90%;
+  background-size: 140px;
+  background-repeat: no-repeat;
+}
+.specialads .specialads_content:nth-child(2) {
+  background-image: url("../../images/headphone.png");
+  background-position: 100% 90%;
+  background-size: 75px;
+  background-repeat: no-repeat;
+}
+.specialads .specialads_content a {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 25px;
+  margin-top: 15px;
+  color: #222;
+  background-color: white;
+}
+.specialads .specialads_content a:hover {
+  background-color: black;
+  color: white;
+}
+
+/****trending h1**/
+.trendingheader {
+  width: 90vw;
+  margin: 100px auto;
+}
+
+.trendingproducts {
+  width: 90vw;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 20px;
+  /*************************************/
+}
+.trendingproducts .productcard {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.trendingproducts .productcard .cardimg {
+  height: 400px;
+  background-color: #F5F5F5;
+  position: relative;
+}
+.trendingproducts .productcard .cardimg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.trendingproducts .productcard .cardimg .hoveredimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  opacity: 0;
+  display: flex;
+  padding: 10px;
+  transition: 0.5s ease-in-out;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.trendingproducts .productcard .cardimg .hoveredimg .addToFav {
+  cursor: pointer;
+  padding: 5px;
+  background-color: white;
+}
+.trendingproducts .productcard .cardimg .hoveredimg .addToFav span {
+  font-size: 30px;
+}
+.trendingproducts .productcard .cardimg .hoveredimg .addToFav:hover span {
+  color: red;
+}
+.trendingproducts .productcard .cardimg:hover .hoveredimg {
+  opacity: 1;
+}
+.trendingproducts .productcard .product_description {
+  margin-top: 10px;
+}
+.trendingproducts .productcard .product_description .product_price_buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.trendingproducts .productcard .product_description .product_price_buy .buythisitem {
+  cursor: pointer;
+  padding: 5px;
+}
+.trendingproducts .productcard .product_description .product_price_buy .buythisitem:hover {
+  background-color: #F5F5F5;
+}
+.trendingproducts .productcard .product_description .product_price_buy p {
+  color: green;
+}
+.trendingproducts .productcard .product_description .product_price_buy p span {
+  color: darkred;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
+/** making slider + special ads +  trending products div responsive**/
+@media screen and (max-width: 1000px) {
+  .slider {
+    height: 600px;
+  }
+  .slider .slides {
+    height: 600px;
+  }
+  .slider .slides .slide {
+    height: 100%;
+    flex-direction: column;
+  }
+  .slider .slides .slide .pubcontent {
+    position: static;
+    padding-left: 0;
+  }
+  .slider .dots,
+  .slider .idots {
+    left: 90%;
+    top: 10px;
+    flex-direction: column;
+  }
+  .specialads {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .specialads .specialads_content {
+    width: 100%;
+  }
+  .trendingproducts .productcard {
+    flex-basis: 45%;
+  }
+  .trendingproducts .productcard .cardimg {
+    height: 250px;
+  }
+}
+/****end making  slider + special ads + trending products div responsive**/
+/***show more*/
+.showmore {
+  width: 90vw;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.showmore .line {
+  flex-basis: 40%;
+  height: 1px;
+  background-color: rgb(193, 187, 187);
+}
+.showmore a {
+  white-space: nowrap;
+  /* Prevent text wrapping */
+  padding: 10px 25px;
+  border: 1px solid #c3bdeb;
+  color: #222;
+}
+
+/********show more end*********/
+/*********** sports pubs responsive**********************/
+.sportsPubs {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  margin: 100px auto;
+}
+.sportsPubs .sportpub1 {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px;
+  background-color: #FFEAAD;
+}
+.sportsPubs .sportpub1 .pubcontent {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-basis: 50%;
+}
+.sportsPubs .sportpub1 .pubcontent a {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 25px;
+  color: #222;
+  background-color: white;
+}
+.sportsPubs .sportpub1 .pubcontent a:hover {
+  background-color: black;
+  color: white;
+}
+.sportsPubs .sportpub1 .sportpub1_img {
+  height: calc(100% + 50px);
+  position: absolute;
+  right: 50px;
+  top: -50px;
+}
+.sportsPubs .sportpub1 .sportpub1_img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.sportsPubs .multiplesportpubs {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.sportsPubs .multiplesportpubs .m_pubs {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.sportsPubs .multiplesportpubs .m_pubs .pubm {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 50px;
+}
+.sportsPubs .multiplesportpubs .m_pubs .pubm:nth-child(1) {
+  background-color: #c3bdeb;
+}
+.sportsPubs .multiplesportpubs .m_pubs .pubm:nth-child(2) {
+  background-color: #f3d2d7;
+}
+.sportsPubs .multiplesportpubs .m_pubs .pubm .pubmcontent {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-basis: 50%;
+}
+.sportsPubs .multiplesportpubs .m_pubs .pubm .pubmcontent a {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 25px;
+  color: #222;
+  background-color: white;
+}
+.sportsPubs .multiplesportpubs .m_pubs .pubm .pubmcontent a:hover {
+  background-color: black;
+  color: white;
+}
+.sportsPubs .multiplesportpubs .m_pubs .pubm .pubmimg {
+  height: calc(100% + 50px);
+  position: absolute;
+  left: 50px;
+  top: -50px;
+}
+.sportsPubs .multiplesportpubs .m_pubs .pubm .pubmimg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.sportsPubs .multiplesportpubs .sidepubsport {
+  flex-basis: 40%;
+  height: 450px;
+  background-color: #B2D5D5;
+  padding: 50px;
+  background-image: url("../../images/gymman2.png");
+  background-position: bottom right;
+  background-size: 35%;
+  background-repeat: no-repeat;
+}
+.sportsPubs .multiplesportpubs .sidepubsport .sidepubcontent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sportsPubs .multiplesportpubs .sidepubsport .sidepubcontent a {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 25px;
+  color: #222;
+  background-color: white;
+}
+.sportsPubs .multiplesportpubs .sidepubsport .sidepubcontent a:hover {
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .sportsPubs .sportpub1 {
+    padding: 25px;
+    height: 500px;
+    flex-direction: column;
+  }
+  .sportsPubs .sportpub1 .sportpub1_img {
+    right: 0px;
+    top: 25%;
+    height: 75%;
+  }
+  .sportsPubs .multiplesportpubs {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .sportsPubs .multiplesportpubs .sidepubsport {
+    background-size: contain;
+  }
+  .sportsPubs .multiplesportpubs .m_pubs .pubm .pubmimg {
+    left: 0px;
+  }
+}
+/***********END sports pubs responsive**********************/
+/**********************display items pre-genre (responsive)***************/
+.genredisplay {
+  width: 90vw;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.genredisplay .displayedgenre {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.genredisplay .displayedgenre .genreinfos {
+  width: 30%;
+}
+.genredisplay .displayedgenre .genreinfos h1 {
+  font-style: italic;
+}
+.genredisplay .displayedgenre .genreinfos p {
+  margin-top: 80px;
+}
+.genredisplay .displayedgenre .genreinfos a {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 20px;
+  padding: 10px 25px;
+  color: #222;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+.genredisplay .displayedgenre .genreinfos a:hover {
+  color: white;
+  background-color: black;
+}
+.genredisplay .displayedgenre .displayed_items {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  justify-content: space-between;
+  gap: 20px;
+  width: 70%;
+}
+.genredisplay .displayedgenre .displayed_items .productcard {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .cardimg {
+  height: 400px;
+  background-color: #F5F5F5;
+  position: relative;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .cardimg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .cardimg .hoveredimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  opacity: 0;
+  display: flex;
+  padding: 10px;
+  transition: 0.5s ease-in-out;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .cardimg .hoveredimg .addToFav {
+  cursor: pointer;
+  padding: 5px;
+  background-color: white;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .cardimg .hoveredimg .addToFav span {
+  font-size: 30px;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .cardimg .hoveredimg .addToFav:hover span {
+  color: red;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .cardimg:hover .hoveredimg {
+  opacity: 1;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .product_description {
+  margin-top: 10px;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .product_description .product_price_buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .product_description .product_price_buy .buythisitem {
+  cursor: pointer;
+  padding: 5px;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .product_description .product_price_buy .buythisitem:hover {
+  background-color: #F5F5F5;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .product_description .product_price_buy p {
+  color: green;
+}
+.genredisplay .displayedgenre .displayed_items .productcard .product_description .product_price_buy p span {
+  color: darkred;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+.genredisplay .displayedgenre .displayed_items .productcard {
+  flex-basis: calc((100% - 20px) / 3);
+}
+
+@media screen and (max-width: 1000px) {
+  .genredisplay .displayedgenre {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+  .genredisplay .displayedgenre .genreinfos {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .genredisplay .displayedgenre .displayed_items {
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    margin-left: 0;
+  }
+  .genredisplay .displayedgenre .displayed_items .productcard {
+    flex-basis: 100%;
+  }
+  .genredisplay .displayedgenre .displayed_items .productcard .cardimg {
+    height: 500px;
+  }
+}
+/**********************end display items pre-genre (responsive)***************/
+/*************************subscribe***********************/
+@media screen and (max-width: 800px) {
+  .subscribe {
+    flex-direction: column;
+  }
+}
+.subscribe {
+  width: 90vw;
+  margin: 10px auto;
+  height: 400px;
+  background-color: #FFEAAD;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+.subscribe .subscribetext {
+  flex-basis: 45%;
+}
+.subscribe .subscribetext h1 {
+  font-style: italic;
+}
+.subscribe .subscribe_area {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-basis: 45%;
+}
+.subscribe .subscribe_area input {
+  height: 50px;
+  border: 0;
+  outline: 0;
+  flex-grow: 1;
+  background-color: white;
+  padding-left: 10px;
+}
+.subscribe .subscribe_area button {
+  display: block;
+  height: 50px;
+  padding: 10px 25px;
+  background-color: black;
+  cursor: pointer;
+  color: white;
+}
+
+footer {
+  margin-top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 20px 20px 100px;
+  background-color: rgba(247, 224, 74, 0.5647058824);
+}
+
+.footer-div {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  /* Center the content vertically */
+  /* Center the content horizontally */
+  margin-bottom: 20px;
+}
+.footer-div:nth-child(1) {
+  flex-basis: 25%;
+}
+.footer-div h1 {
+  margin-bottom: 10px;
+}
+.footer-div a {
+  color: #222;
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-div {
+    flex-basis: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+  list-style-type: none;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+  text-transform: capitalize;
+}/*# sourceMappingURL=main.css.map */

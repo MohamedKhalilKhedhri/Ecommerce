@@ -1,0 +1,921 @@
+                @use '../abstracts' as *;
+                .material-symbols-outlined {
+                    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+                }
+                /*stying nav*/
+                
+                nav {
+                    @include centering;
+                    width: 100%;
+                    box-shadow: 0px 2px 5px rgb(0, 0, 0, .4);
+                    height: 4.4rem;
+                    padding: 0px 1.2rem;
+                    .dropdown {
+                        /*our hovered area to displaay the dropdown_content*/
+                        position: relative;
+                        height: 100%;
+                        .dropbtn1 {
+                            height: 100%;
+                            padding: 0px 25px;
+                            margin-left: 10px;
+                        }
+                        .dropdown_content {
+                            /*styling our categories dropcontent*/
+                            position: absolute;
+                            left: 0;
+                            top: 100%;
+                            z-index: 9999;
+                            background-color: white;
+                            padding: 15px 0px;
+                            border-radius: 10px;
+                            box-shadow: 0px 2px 5px rgb(0, 0, 0, .4);
+                            display: none;
+                            flex-direction: column;
+                            width: 300px;
+                            /*start styling the drop left menu that have buttons to hover to display the dropleft_content*/
+                            .dropleft_menu {
+                                .dropbtn2 {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    width: 100%;
+                                    cursor: pointer;
+                                    padding: 10px;
+                                    &:hover {
+                                        color: $categoryHover;
+                                    }
+                                }
+                                &:hover .dropbtn2+.dropleft_content {
+                                    display: flex;
+                                }
+                            }
+                            .dropleft_content {
+                                /* styling the options of every category we  have*/
+                                position: absolute;
+                                display: none;
+                                flex-direction: column;
+                                gap: 10px;
+                                left: 100%;
+                                top: 0;
+                                border-radius: 10px;
+                                background-color: white;
+                                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+                                height: 100%;
+                                width: 100%;
+                                z-index: 10;
+                                a {
+                                    padding: 10px 25px;
+                                    color: $links-color;
+                                    &:hover {
+                                        color: $categoryHover;
+                                    }
+                                }
+                                /*end of it (options)*/
+                            }
+                        }
+                        &:hover .dropdown_content,
+                        .dropdown_content:hover {
+                            /*hovered categories to show our categories*/
+                            display: flex;
+                        }
+                    }
+                    .search {
+                        /* styling search filed*/
+                        margin-left: 10px;
+                        display: flex;
+                        border-radius: 30px;
+                        height: 50px;
+                        flex-grow: 2;
+                        box-shadow: 0px 2px 10px rgb(0, 0, 0, .4);
+                        overflow: hidden;
+                        input {
+                            border-radius: 30px;
+                            padding-left: 20px;
+                            width: 100%;
+                            height: 100%;
+                            border: 0;
+                            outline: 0;
+                            flex: 1;
+                        }
+                        button {
+                            cursor: pointer;
+                            padding: 0px 10px;
+                        }
+                        /*end styling the search  field*/
+                    }
+                    ul {
+                        /*  styling ul it lists : season drop menu , heart , shop , profile drop menu*/
+                        display: flex;
+                        height: 100%;
+                        margin-left: 20px;
+                        align-items: center;
+                        justify-content: space-between;
+                        flex-grow: 1;
+                        li {
+                            flex-basis: 25%;
+                            display: flex;
+                            align-items: center;
+                            height: 100%;
+                            >a,
+                            button {
+                                flex-basis: 100%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: $links-color;
+                                &:hover {
+                                    color: $categoryHover;
+                                }
+                            }
+                        }
+                        //end styling ul
+                        .dropseason {
+                            /*hovered area to show our season dropmenu*/
+                            position: relative;
+                            height: 100%;
+                            .Sbtn {
+                                /* the button to hover*/
+                                height: 100%;
+                            }
+                            .seasons {
+                                /* the drop down menu of seasons*/
+                                z-index: 9999;
+                                position: absolute;
+                                right: 0;
+                                top: 100%;
+                                background-color: white;
+                                padding: 15px 0px;
+                                border-radius: 10px;
+                                box-shadow: 0px 2px 5px rgb(0, 0, 0, .4);
+                                display: none;
+                                flex-direction: column;
+                                width: 200px;
+                                a {
+                                    /*seasons links*/
+                                    display: block;
+                                    width: 100%;
+                                    cursor: pointer;
+                                    padding: 10px;
+                                    text-align: center;
+                                    color: $links-color;
+                                    &:hover {
+                                        color: $categoryHover;
+                                    }
+                                }
+                            }
+                            &:hover .seasons,
+                            .seasons:hover {
+                                display: flex;
+                            }
+                        }
+                        .profile {
+                            /*hovered area to show profile options*/
+                            position: relative;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            &:hover .profileinfos {
+                                display: flex;
+                            }
+                            .profileinfos {
+                                /* all infos of profile  flash + communication +regles*/
+                                z-index: 9999;
+                                position: absolute;
+                                right: 0;
+                                top: 100%;
+                                display: none;
+                                flex-direction: column;
+                                gap: 5px;
+                                background-color: white;
+                                padding: 15px;
+                                border-radius: 10px;
+                                box-shadow: 0px 2px 5px rgb(0, 0, 0, .4);
+                                .flash_profile {
+                                    /*profile content : img , mail , name*/
+                                    display: flex;
+                                    width: 100%;
+                                    justify-content: space-evenly;
+                                    gap: 5px;
+                                    align-items: center;
+                                    .profile_img {
+                                        /*profile border*/
+                                        @include circle(60px);
+                                        overflow: hidden;
+                                        position: relative;
+                                        img {
+                                            /* profile image*/
+                                            display: block;
+                                            width: 100%;
+                                            position: absolute;
+                                            height: 100%;
+                                            object-fit: cover;
+                                        }
+                                    }
+                                }
+                                /*messages / notifications  links in user profile*/
+                                .communication,
+                                .regles {
+                                    margin-top: 10px;
+                                    display: flex;
+                                    width: 100%;
+                                    flex-direction: column;
+                                    a {
+                                        padding: 10px;
+                                        color: $links-color;
+                                        &:hover {
+                                            color: $categoryHover;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    /* a close button in case the web opened in phone*/
+                    .close {
+                        width: 50px;
+                        height: 50px;
+                        background-color: black;
+                        color: white;
+                        display: none;
+                    }
+                    /*end Styling nav*/
+                }
+                
+                .open {
+                    /*styling the open side nav button*/
+                    position: fixed;
+                    top: 30px;
+                    left: 20px;
+                    padding: 20px;
+                    display: none;
+                    background-color: black;
+                    color: white;
+                    cursor: pointer;
+                    z-index: 99998;
+                }
+                /*start making the nav responsive*/
+                
+                @media screen and (max-width:1000px) {
+                    nav {
+                        justify-content: space-evenly;
+                        background-color: white;
+                        position: fixed;
+                        backdrop-filter: blur(50px);
+                        width: 70%;
+                        top: 0;
+                        transition: 1s ease-in-out;
+                        transform: translateX(0%);
+                        height: 100vh;
+                        z-index: 99999;
+                        flex-direction: column-reverse;
+                        align-items: center;
+                        .dropdown {
+                            display: none;
+                        }
+                        .search {
+                            width: 100%;
+                            height: 50px;
+                            flex-grow: 0;
+                        }
+                        ul {
+                            flex-direction: column-reverse;
+                            align-items: center;
+                            width: 100%;
+                            height: 75%;
+                            position: relative;
+                            flex-grow: 0;
+                            li {
+                                text-align: center;
+                                width: 100%;
+                                a {
+                                    display: block;
+                                    padding: 10px;
+                                    width: 100%;
+                                    border: 3px solid white;
+                                    color: $links-color;
+                                    background-color: white;
+                                }
+                            }
+                            .dropseason {
+                                display: none;
+                            }
+                            .profile {
+                                width: 100%;
+                                height: auto;
+                                .Pbtn {
+                                    display: none;
+                                }
+                                .profileinfos {
+                                    position: static;
+                                    display: flex;
+                                    box-shadow: none;
+                                    padding: 0;
+                                    width: 100%;
+                                    margin-top: 10px;
+                                    .flash_profile {
+                                        position: relative;
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        width: 100%;
+                                        justify-content: space-evenly;
+                                        gap: 5px;
+                                        align-items: center;
+                                        .profile_img {
+                                            @include circle(150px);
+                                        }
+                                        .profileinfo {
+                                            padding: 10px;
+                                            width: 100%;
+                                            h3 {
+                                                font-size: 25px;
+                                                text-align: center;
+                                            }
+                                            p {
+                                                text-align: center;
+                                                word-wrap: break-word;
+                                            }
+                                        }
+                                    }
+                                    .communication,
+                                    .regles {
+                                        margin-top: 15px;
+                                        display: flex;
+                                        width: 100%;
+                                        flex-direction: column;
+                                        a {
+                                            padding: 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .search {
+                            margin-top: 10px;
+                            width: 90%;
+                            flex-direction: row-reverse;
+                            input {
+                                padding: 0
+                            }
+                        }
+                        .close {
+                            @include circle(30px);
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            display: block;
+                            z-index: 99999;
+                        }
+                    }
+                }
+                
+                @media screen and (max-width:500px) {
+                    nav {
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        h1 {
+                            display: none;
+                        }
+                    }
+                }
+                /*end of making nav responsive*/
+                
+                .slider {
+                    /*styling slider container*/
+                    width: 90vw;
+                    margin: 10px auto;
+                    height: 400px;
+                    position: relative;
+                    .slides {
+                        /*styling my slides*/
+                        display: flex;
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        overflow: hidden;
+                        .slide {
+                            /*styling each slide*/
+                            flex: 0 0 100%;
+                            height: 400px;
+                            position: relative;
+                            animation-name: fade;
+                            animation-duration: 1.5s;
+                            img {
+                                /*slide img*/
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                            .pubcontent {
+                                /*the pubcontent in each slide*/
+                                position: absolute;
+                                bottom: 75px;
+                                left: 50px;
+                                background-color: white;
+                                box-shadow: 0px 2px 5px rgb(0, 0, 0, .5);
+                                padding: 10px 25px;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 5px;
+                                a {
+                                    display: block;
+                                    width: fit-content;
+                                    margin-top: 10px;
+                                    padding: 10px 25px;
+                                    color: $links-color;
+                                    background-color: white;
+                                    box-shadow: 0px 0px 2px rgb(0, 0, 0, .6);
+                                    &:hover {
+                                        background-color: black;
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    /*styling the dots*/
+                    .dots,
+                    .idots {
+                        position: absolute;
+                        bottom: 20px;
+                        display: flex;
+                        border-radius: 50px;
+                        left: 20px;
+                        .dot,
+                        .idot {
+                            margin: 5px 10px;
+                            width: 15px;
+                            height: 15px;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            box-shadow: 0px 0px 2px black;
+                            z-index: 100;
+                        }
+                        .idot {
+                            opacity: 0;
+                        }
+                    }
+                }
+                /*end styling dots*/
+                /* opacity animation after sliding*/
+                
+                @keyframes fade {
+                    from {
+                        opacity: .4
+                    }
+                    to {
+                        opacity: 1
+                    }
+                }
+                /***/
+                
+                .specialads {
+                    /****styling my 2 add divs for special disscounts***/
+                    display: flex;
+                    width: 90vw;
+                    margin: 50px auto;
+                    justify-content: space-between;
+                    .specialads_content {
+                        background-color: $lightgray;
+                        width: 48%;
+                        display: flex;
+                        padding: 20px;
+                        flex-direction: column;
+                        gap: 5px;
+                        /****our disscounted product small image (for attraction)****/
+                        &:nth-child(1) {
+                            background-image: url('../../images/shoee.png');
+                            background-position: 100% 90%;
+                            background-size: 140px;
+                            background-repeat: no-repeat;
+                        }
+                        &:nth-child(2) {
+                            background-image: url('../../images/headphone.png');
+                            background-position: 100% 90%;
+                            background-size: 75px;
+                            background-repeat: no-repeat;
+                        }
+                        a {
+                            display: block;
+                            width: fit-content;
+                            padding: 10px 25px;
+                            margin-top: 15px;
+                            color: $links-color;
+                            background-color: white;
+                            &:hover {
+                                background-color: black;
+                                color: white;
+                            }
+                        }
+                    }
+                    /*****end of styling two disscount  divs***/
+                }
+                /****trending h1**/
+                
+                .trendingheader {
+                    width: 90vw;
+                    margin: 100px auto;
+                }
+                
+                .trendingproducts {
+                    width: 90vw;
+                    margin: 50px auto;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-flow: row wrap;
+                    gap: 20px;
+                    /*************************************/
+                    @include card;
+                }
+                /** making slider + special ads +  trending products div responsive**/
+                
+                @media screen and (max-width:1000px) {
+                    .slider {
+                        height: 600px;
+                        .slides {
+                            height: 600px;
+                            .slide {
+                                height: 100%;
+                                flex-direction: column;
+                                .pubcontent {
+                                    position: static;
+                                    padding-left: 0;
+                                }
+                            }
+                        }
+                        .dots,
+                        .idots {
+                            left: 90%;
+                            top: 10px;
+                            flex-direction: column;
+                        }
+                    }
+                    .specialads {
+                        flex-direction: column;
+                        gap: 10px;
+                        .specialads_content {
+                            width: 100%;
+                        }
+                    }
+                    .trendingproducts {
+                        .productcard {
+                            flex-basis: 45%;
+                            .cardimg {
+                                height: 250px;
+                            }
+                        }
+                    }
+                }
+                /****end making  slider + special ads + trending products div responsive**/
+                /***show more*/
+                
+                .showmore {
+                    width: 90vw;
+                    margin: 50px auto;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .line {
+                        flex-basis: 40%;
+                        height: 1px;
+                        background-color: rgb(193, 187, 187);
+                    }
+                    a {
+                        white-space: nowrap;
+                        /* Prevent text wrapping */
+                        padding: 10px 25px;
+                        border: 1px solid $LightPurple;
+                        color: $links-color;
+                    }
+                }
+                /********show more end*********/
+                /*********** sports pubs responsive**********************/
+                
+                .sportsPubs {
+                    display: flex;
+                    flex-direction: column;
+                    width: 90vw;
+                    margin: 100px auto;
+                    .sportpub1 {
+                        width: 100%;
+                        height: 400px;
+                        position: relative;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding: 50px;
+                        background-color: $LightYellow;
+                        .pubcontent {
+                            padding: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            flex-basis: 50%;
+                            a {
+                                display: block;
+                                width: fit-content;
+                                padding: 10px 25px;
+                                color: $links-color;
+                                background-color: white;
+                                &:hover {
+                                    background-color: black;
+                                    color: white;
+                                }
+                            }
+                        }
+                        .sportpub1_img {
+                            height: calc(100% + 50px);
+                            position: absolute;
+                            right: 50px;
+                            top: -50px;
+                            img {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                    .multiplesportpubs {
+                        margin-top: 50px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        .m_pubs {
+                            flex-basis: 50%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 50px;
+                            .pubm {
+                                width: 100%;
+                                height: 200px;
+                                position: relative;
+                                display: flex;
+                                justify-content: flex-end;
+                                align-items: center;
+                                padding: 50px;
+                                &:nth-child(1) {
+                                    background-color: $LightPurple;
+                                }
+                                &:nth-child(2) {
+                                    background-color: $LightPink;
+                                }
+                                .pubmcontent {
+                                    padding: 10px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 10px;
+                                    flex-basis: 50%;
+                                    a {
+                                        display: block;
+                                        width: fit-content;
+                                        padding: 10px 25px;
+                                        color: $links-color;
+                                        background-color: white;
+                                        &:hover {
+                                            background-color: black;
+                                            color: white;
+                                        }
+                                    }
+                                }
+                                .pubmimg {
+                                    height: calc(100% + 50px);
+                                    position: absolute;
+                                    left: 50px;
+                                    top: -50px;
+                                    img {
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: contain;
+                                    }
+                                }
+                            }
+                        }
+                        .sidepubsport {
+                            flex-basis: 40%;
+                            height: 450px;
+                            background-color: $LightBlue;
+                            padding: 50px;
+                            background-image: url("../../images/gymman2.png");
+                            background-position: bottom right;
+                            background-size: 35%;
+                            background-repeat: no-repeat;
+                            .sidepubcontent {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                a {
+                                    display: block;
+                                    width: fit-content;
+                                    padding: 10px 25px;
+                                    color: $links-color;
+                                    background-color: white;
+                                    &:hover {
+                                        background-color: black;
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                @media screen and (max-width:1000px) {
+                    .sportsPubs {
+                        .sportpub1 {
+                            padding: 25px;
+                            height: 500px;
+                            flex-direction: column;
+                            .sportpub1_img {
+                                right: 0px;
+                                top: 25%;
+                                height: 75%;
+                            }
+                        }
+                        .multiplesportpubs {
+                            flex-direction: column;
+                            gap: 50px;
+                            .sidepubsport {
+                                background-size: contain;
+                            }
+                            .m_pubs {
+                                .pubm {
+                                    .pubmimg {
+                                        left: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                /***********END sports pubs responsive**********************/
+                /**********************display items pre-genre (responsive)***************/
+                
+                .genredisplay {
+                    width: 90vw;
+                    margin: 50px auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 50px;
+                    .displayedgenre {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 30px;
+                        .genreinfos {
+                            width: 30%;
+                            h1 {
+                                font-style: italic;
+                            }
+                            p {
+                                margin-top: 80px;
+                            }
+                            a {
+                                display: block;
+                                width: fit-content;
+                                margin-top: 20px;
+                                padding: 10px 25px;
+                                color: $links-color;
+                                background-color: white;
+                                box-shadow: 0px 0px 5px rgb(0, 0, 0, .4);
+                                &:hover {
+                                    color: white;
+                                    background-color: black;
+                                }
+                            }
+                        }
+                        .displayed_items {
+                            display: flex;
+                            flex-direction: row;
+                            margin-left: 50px;
+                            justify-content: space-between;
+                            gap: 20px;
+                            width: 70%;
+                            @include card;
+                            .productcard {
+                                flex-basis: calc((100% - 20px)/ 3);
+                            }
+                        }
+                    }
+                }
+                
+                @media screen and (max-width:1000px) {
+                    .genredisplay {
+                        .displayedgenre {
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 50px;
+                            .genreinfos {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                
+                @media screen and (max-width:800px) {
+                    .genredisplay {
+                        .displayedgenre {
+                            .displayed_items {
+                                flex-direction: column;
+                                gap: 50px;
+                                width: 100%;
+                                margin-left: 0;
+                                .productcard {
+                                    flex-basis: 100%;
+                                    .cardimg {
+                                        height: 500px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                /**********************end display items pre-genre (responsive)***************/
+                /*************************subscribe***********************/
+                
+                @media screen and (max-width:800px) {
+                    .subscribe {
+                        flex-direction: column;
+                    }
+                }
+                
+                .subscribe {
+                    width: 90vw;
+                    margin: 10px auto;
+                    height: 400px;
+                    background-color: $LightYellow;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 50px;
+                    .subscribetext {
+                        flex-basis: 45%;
+                        h1 {
+                            font-style: italic;
+                        }
+                    }
+                    .subscribe_area {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        flex-basis: 45%;
+                        input {
+                            height: 50px;
+                            border: 0;
+                            outline: 0;
+                            flex-grow: 1;
+                            background-color: white;
+                            padding-left: 10px;
+                        }
+                        button {
+                            display: block;
+                            height: 50px;
+                            padding: 10px 25px;
+                            background-color: black;
+                            cursor: pointer;
+                            color: white;
+                        }
+                    }
+                }
+                
+                footer {
+                    margin-top: 150px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    align-items: flex-start;
+                    padding: 20px 20px 100px;
+                    background-color: #f7e04a90;
+                }
+                
+                .footer-div {
+                    &:nth-child(1) {
+                        flex-basis: 25%;
+                    }
+                    display: flex;
+                    gap: 10px;
+                    flex-direction: column;
+                    justify-content: center;
+                    /* Center the content vertically */
+                    /* Center the content horizontally */
+                    margin-bottom: 20px;
+                    h1 {
+                        margin-bottom: 10px;
+                    }
+                    a {
+                        color: $links-color;
+                    }
+                }
+                
+                @media screen and (max-width: 600px) {
+                    footer {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .footer-div {
+                        flex-basis: 100%;
+                        align-items: center;
+                        text-align: center;
+                    }
+                }
